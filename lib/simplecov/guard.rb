@@ -1,3 +1,4 @@
+require "simplecov"
 require "simplecov/guard/version"
 
 module Simplecov
@@ -17,7 +18,8 @@ module Simplecov
 
       def current_filename
         @_current_filename ||= begin
-          Dir.pwd + "/" + ARGV[0].sub("spec", "app").sub("_spec", "")
+          # @todo ARGV.last is brittle. Is there a regex that could help here?
+          Dir.pwd + "/" + ARGV.last.sub("spec", "app").sub("_spec", "")
         end
       end
 
