@@ -1,17 +1,17 @@
 
 lib = File.expand_path("../lib", __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require "simplecov/guard/version"
+require "simplecov/tdd/version"
 
 Gem::Specification.new do |spec|
-  spec.name          = "simplecov-guard"
-  spec.version       = Simplecov::Guard::VERSION
+  spec.name          = "simplecov-tdd"
+  spec.version       = Simplecov::Tdd::VERSION
   spec.authors       = ["Josh Frankel"]
   spec.email         = ["joshmfrankel@gmail.com"]
 
-  spec.summary       = "SimpleCov formatter to generate single file Guard results"
-  spec.description   = "SimpleCov formatter to generate single file Guard results"
-  spec.homepage      = "https://github.com/joshmfrankel/simplecov-guard"
+  spec.summary       = "SimpleCov formatter to generate single file coverage results"
+  spec.description   = "SimpleCov formatter to generate single file coverage results"
+  spec.homepage      = "https://github.com/joshmfrankel/simplecov-tdd"
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
   # to allow pushing to a single host or delete this section to allow pushing to any host.
