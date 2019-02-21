@@ -1,6 +1,8 @@
 # Simplecov::Tdd
 
-A SimpleCov formatter for test driven development
+A SimpleCov formatter for test driven development by displaying code coverage directly in the console for single files
+
+![Example TDD](https://github.com/joshmfrankel/simplecov-tdd/blob/master/example.gif)
 
 ## Installation
 
@@ -28,7 +30,7 @@ require "simplecov/tdd"
 SimpleCov.formatter = Simplecov::Formatter::Tdd
 ```
 
-Simple Example:
+Simple Setup:
 
 ```ruby
 # /spec/spec_helper.rb
