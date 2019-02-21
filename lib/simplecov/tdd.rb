@@ -1,7 +1,7 @@
 require "simplecov"
 require "simplecov/tdd/version"
 
-module Simplecov
+module SimpleCov
   module Formatter
     class Tdd
       attr_reader :result

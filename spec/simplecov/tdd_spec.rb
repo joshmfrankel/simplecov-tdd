@@ -1,6 +1,6 @@
-RSpec.describe Simplecov::Tdd do
+RSpec.describe SimpleCov::Tdd do
 
-  let(:formatter) { Simplecov::Formatter::Tdd.new }
+  let(:formatter) { SimpleCov::Formatter::Tdd.new }
   let(:matched_90_filename) { Dir.pwd + "/app/models/matched_90.rb" }
   let(:matched_90_spec) { "spec/models/matched_90_spec.rb" }
   let(:matched_file_90_coverage) do
@@ -35,7 +35,7 @@ RSpec.describe Simplecov::Tdd do
   end
 
   it "has a version number" do
-    expect(Simplecov::Tdd::VERSION).not_to be nil
+    expect(SimpleCov::Tdd::VERSION).not_to be nil
   end
 
   describe "#format" do
