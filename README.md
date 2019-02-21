@@ -21,14 +21,30 @@ Or install it yourself as:
 ## Usage
 
 1. Ensure that you've configured your project to SimpleCov's _Getting Started_ section: https://github.com/colszowka/simplecov#getting-started
-2. Set your `SimpleCov.formatter` to the following:
+2. Set your SimpleCov configuration to the following:
 
 ```ruby
+require "simplecov/tdd"
 SimpleCov.formatter = Simplecov::Formatter::Tdd
 ```
-3. Run your tests using rspec path/to/file_spec.rb or guard
+
+Simple Example:
+
+```ruby
+# /spec/spec_helper.rb
+require "simplecov"
+require "simplecov/tdd"
+SimpleCov.formatter = SimpleCov::Formatter::Tdd
+SimpleCov.start 'rails'
+```
+
+3. Run your tests using `rspec path/to/file_spec.rb` or `guard`
 4. Fix the missing coverage
 5. 💰 Profit! 💰
+
+## Future Features
+
+* Support for minitest
 
 ## Development
 
