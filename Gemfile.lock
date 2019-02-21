@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    simplecov-tdd (0.1.1)
+    simplecov-tdd (0.1.0)
       simplecov
 
 GEM

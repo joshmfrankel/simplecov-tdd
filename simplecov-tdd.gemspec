@@ -9,8 +9,8 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Josh Frankel"]
   spec.email         = ["joshmfrankel@gmail.com"]
 
-  spec.summary       = "SimpleCov formatter to generate single file coverage results"
-  spec.description   = "SimpleCov formatter to generate single file coverage results"
+  spec.summary       = "SimpleCov formatter for test driven development"
+  spec.description   = "SimpleCov formatter for test driven development"
   spec.homepage      = "https://github.com/joshmfrankel/simplecov-tdd"
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'

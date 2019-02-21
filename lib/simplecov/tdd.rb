@@ -52,16 +52,19 @@ module Simplecov
       def coverage_overview_text
         covered_percent = result.covered_percent.round(2)
         overview_text = "#{covered_percent}% coverage, #{result.lines_of_code} total lines"
+        colorized_overview_text = overview_text
 
-        colorized_overview_text = if covered_percent > 85
-          # Green
-          "\e[32m#{overview_text}\e[0m"
-        elsif covered_percent > 65
-          # Orange
-          "\e[33m#{overview_text}\e[0m"
-        else
-          # Red
-          "\e[31m#{overview_text}\e[0m"
+        if STDOUT.tty?
+          colorized_overview_text = if covered_percent > 85
+            # Green
+            "\e[32m#{overview_text}\e[0m"
+          elsif covered_percent > 65
+            # Orange
+            "\e[33m#{overview_text}\e[0m"
+          else
+            # Red
+            "\e[31m#{overview_text}\e[0m"
+          end
         end
 
         puts colorized_overview_text
