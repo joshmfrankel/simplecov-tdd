@@ -1,8 +1,6 @@
 # Simplecov::Tdd
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/simplecov/tdd`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+A SimpleCov formatter for test driven development
 
 ## Installation
 
@@ -22,7 +20,15 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+1. Ensure that you've configured your project to SimpleCov's _Getting Started_ section: https://github.com/colszowka/simplecov#getting-started
+2. Set your `SimpleCov.formatter` to the following:
+
+```ruby
+SimpleCov.formatter = Simplecov::Formatter::Tdd
+```
+3. Run your tests using rspec path/to/file_spec.rb or guard
+4. Fix the missing coverage
+5. 💰 Profit! 💰
 
 ## Development
 
@@ -32,8 +38,8 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/simplecov-tdd. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
+Bug reports and pull requests are welcome on GitHub at https://github.com/joshmfrankel/simplecov-tdd. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
 
 ## Code of Conduct
 
-Everyone interacting in the Simplecov::Tdd project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/[USERNAME]/simplecov-tdd/blob/master/CODE_OF_CONDUCT.md).
+Everyone interacting in the Simplecov::Tdd project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/joshmfrankel/simplecov-tdd/blob/master/CODE_OF_CONDUCT.md).
