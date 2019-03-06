@@ -1,6 +1,6 @@
 # Simplecov::Tdd
 
-A SimpleCov formatter for test driven development by displaying code coverage directly in the console for single files
+A SimpleCov formatter for test driven development. Displays code coverage results in the console for single files
 
 ![Example TDD](https://github.com/joshmfrankel/simplecov-tdd/blob/master/example.gif)
 
@@ -28,6 +28,11 @@ Or install it yourself as:
 ```ruby
 require "simplecov/tdd"
 SimpleCov.formatter = Simplecov::Formatter::Tdd
+# OR use multi-formatter
+SimpleCov.formatters = SimpleCov::Formatter::MultiFormatter.new([
+  SimpleCov::Formatter::HTMLFormatter,
+  Simplecov::Formatter::Tdd
+])
 ```
 
 Simple Setup:
@@ -43,6 +48,42 @@ SimpleCov.start 'rails'
 3. Run your tests using `rspec path/to/file_spec.rb` or `guard`
 4. Fix the missing coverage
 5. 💰 Profit! 💰
+
+## Configuration options
+
+There are a few configuration options that may be set before formatting is called.
+Generally you may place these after `SimpleCov.formatter` or `SimpleCov.formatters = SimpleCov::Formatter::MultiFormatter.new` in your setup.
+
+### output_style (default: :simple)
+When there are lines missing coverage, this option determines how to display output.
+The accepted values are `:simple` (default) or `:verbose`.
+
+```ruby
+SimpleCov::Formatter::Tdd.output_style = :verbose
+```
+
+Here's an example of what :verbose output looks like:
+
+```ruby
+app/models/matched_90.rb
+90.0% coverage, 167 total lines
+
+The following 2 lines have missing coverage:
+[5, 25]
+
+line | source code
+-------------------
+5 => obj.is_a?(SomeClass)
+25 => SomeClass.explode!
+```
+
+### debug_mode (default: false)
+This is useful for determining if the current file being tested doesn't have
+a match from SimpleCov's file list.
+
+```ruby
+SimpleCov::Formatter::Tdd.debug_mode = true
+```
 
 ## Future Features
 
